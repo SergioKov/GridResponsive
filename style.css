@@ -1,0 +1,100 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+    font-family: Verdana, sans-serif;
+    min-height: 100%;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+
+.grid-container > * {
+    box-shadow: 0px 0px 4px 2px black;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    /* margin: 5px; */
+}
+/* mobile */
+.grid-container{
+    display:grid;
+    gap:10px;
+    grid-template: 
+    "header"  100px
+    "navbar"  50px 
+    "main"    auto
+    "sidebar" 100px
+    "footer"  100px
+    ;
+}
+
+/* tablet */
+@media (min-width: 600px){
+    .grid-container{
+        background-color: blue;
+        /*
+        grid-template-columns:  200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+         grid-template-areas: 
+        "header  header"
+        "navbar  navbar"
+        "sidebar main"
+        "footer  footer"
+        ; */
+        grid-template: 
+        "header  header" 100px
+        "navbar  navbar" 50px
+        "sidebar main" auto
+        "footer  footer" 100px / 
+        200px    auto
+        ;
+
+    }
+}
+
+
+/* desktop */
+@media (min-width: 900px){
+    .grid-container{
+        background-color: yellow;
+        grid-template: 
+        "header  header header"  100px
+        "navbar  main   sidebar" auto
+        "footer  footer footer"  100px / 
+        200px    auto   200px
+        ;
+
+    }
+}
+
+
+
+
+.header {
+    background-color: red;
+    grid-area: header;
+}
+
+.navbar {
+    background-color: purple;
+    grid-area: navbar;
+}
+.sidebar {
+    background-color: orange;
+    grid-area: sidebar;
+}
+.main {
+    background-color: green;
+    grid-area: main;
+}
+.footer {
+    background-color: grey;
+    grid-area: footer;
+}
